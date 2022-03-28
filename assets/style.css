@@ -1,0 +1,47 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*Check the font family to see if there's a requirement*/
+
+/*he does some weird stuff with hue nuetral at the root at 5 19 */
+
+/*:root{
+    --hue-nuetral:200;
+    --hue-wrong:0;
+    --hue-correct:145;
+}*/ 
+
+body{
+    padding: 0; 
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; 
+    height: 50vh; 
+    /*--hue: var(--hue-neutral);
+    background-color: hsl(var(--hue),100%, 20%);*/
+}
+
+.button-grid{
+    display: grid; 
+}
+
+.button{
+    background-color: purple;
+    color: white; 
+    border-radius: 20px;
+    margin: 5px 0; 
+    outline: none; 
+}
+
+.button:hover{
+    background-color: #CBC3E3; 
+}
+
+/*do i actually need this class? 
+    .hide{
+    display: none;
+}
+*/ 
