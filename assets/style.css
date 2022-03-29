@@ -24,6 +24,18 @@ body{
     background-color: hsl(var(--hue),100%, 20%);*/
 }
 
+#question-container{
+    display: none;
+}
+
+#insert-initials{
+    display: none;
+}
+
+#leaderboard{
+    display: none;
+}
+
 .button-grid{
     display: grid; 
 }

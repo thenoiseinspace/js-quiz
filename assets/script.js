@@ -1,9 +1,21 @@
-//start the game
-
+//setting up global variables
 var startButton = document.getElementById("start-button")
 var questionContainerElement = document.getElementById("question-container")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
+
+//start the game
+function showPage2(){
+    //advance to question page
+    var firstPageOfQuestions = document.getElementById("question-container");
+    var displaySetting1 = firstPageOfQuestions.style.display; 
+    firstPageOfQuestions.style.display="block"; 
+    
+    var landingPage = document.getElementById ("welcome-page"); 
+    var displaySetting2 = landingPage.style.display;
+    landingPage.style.display="none"
+
+}
 
 //shuffling answers to randomize placement in list
 var shuffledQuestions, currentQuestionIndex
@@ -30,6 +42,7 @@ function startGame(){
 function advanceToNextQ(){
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
+    // if all questions have been shown, advance to next
 }
 
 function showQuestion(question){
