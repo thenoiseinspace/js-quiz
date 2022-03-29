@@ -8,6 +8,20 @@
     <title>Coding Quiz Challenge</title>
 </head>
 <body>
+<!--This section will be the landing page-->
+<div class="container">
+    <div id="welcome-page">
+        <h1>This is a Javascript quiz</h1>
+        <p>It hurts me more than it hurts you because it was very difficult to build. Will it work properly? Who knows! Shall we find out together? </p>
+        <div class="controls">
+            <button id="start-button" class="start button button">Start</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!--This section will start the quiz-->
     <!--Building out the question cards here-->
     <div class = "container">
         <div id="question-container" class="hide">
@@ -19,13 +33,31 @@
                 <button class="button">Answer 4</button>
             </div>
         </div>
-        <div class="controls">
-            <button id="start-button" class="start button button">Start</button>
-            <button id="next-button" class="next-button button hide">Next</button>
-
-        </div>
     </div>
-    
+
+<!--This section lets you put in your initials-->
+<div class="container">
+    <div id="insert-initials" class="hide">
+        <h1>Completed!</h1>
+        <h2>Your final score is</h2>
+        <label for="typedInitials">Type your initials:</label>
+        <input type="text" id="typedInitials" name="typedInitials">   
+    </div>
+</div>
+
+<!--This section will be the leaderboard-->
+<div class = "container">
+    <div id="leaderboard" class = "hide">
+        <h1> High scores leaderboard</h1>
+            <div id="highscores"></div>
+            <div id="final-buttons" class="last-page-buttons">
+                <button class="button">Restart</button>
+                <button class="button">Clear scores</button>
+            </div>
+
+    </div>
+</div>    
+
     <script src="assets/script.js"></script> <!--I feel like this is not how we linked js before, double check this-->
 </body>
 </html>

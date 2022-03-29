@@ -8,6 +8,12 @@ var answerButtonsElement = document.getElementById("answer-buttons")
 //shuffling answers to randomize placement in list
 var shuffledQuestions, currentQuestionIndex
 
+//make this thing work with the answer buttons
+answerButtonsElement.addEventListener("click", () => {
+    currentQuestionIndex++
+    advanceToNextQ()
+})
+
 startButton.addEventListener("click", startGame)
 
 function startGame(){
@@ -40,6 +46,8 @@ function showQuestion(question){
     })
 }
 
+
+
 function resetState(){
     while (answerButtonsElement.firstChild){
         answerButtonsElement.removeChild 
@@ -47,16 +55,63 @@ function resetState(){
     }
 }
 
-function selectAnswer(){
+function selectAnswer(e){
+    var selectedButton = e.target 
+    var correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    } )
+    if(shuffledQuestions.length > currentQuestionIndex + 1){
+        //change this
+        nextButton.classList.remove("hide")
+    } else {
+       // startButton.innerText = "Restart"
+        //startButton.classList.remove("hide")
+   }
+}
 
+function setStatusClass(element, correct){
+    clearStatusClass(element)
+    if(correct) {
+       element.classList.add("correct") 
+    } else {
+       element.classList.add("wrong") 
+    }
+}
+
+function clearStatusClass(element){
+    element.classList.remove("correct")
+    element.classList.remove("correct")
 }
 
 var questions = [
     {
-      question1: "text here", 
+      question1: "Arrays in JS can be used to store:", 
       answers:  [
-          {text: "correctAnswer1", correct: true},
-          {text: "incorrectAnswer1", correct: false},
+          {text: "All of these", correct: true},
+          {text: "Numbers and strings", correct: false},
+          {text: "Boolean", correct: false},
+          {text: "Other arrays", correct: false},
       ]
-    }
+    },
+    {
+        question2: "Commonly used data types DO NOT include:", 
+        answers:  [
+            {text: "Alerts", correct: true},
+            {text: "Strings", correct: false},
+            {text: "Boolean", correct: false},
+            {text: "Numbers", correct: false},
+        ]
+      },
+      {
+        question3: "The condition of an 'if/then' statement is enclosed within: ", 
+        answers:  [
+            {text: "parentheses", correct: true},
+            {text: "quotes", correct: false},
+            {text: "square brackets", correct: false},
+            {text: "curly brackets", correct: false},
+        ]
+      }
 ]
+
