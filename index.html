@@ -36,18 +36,19 @@
     </div>
 
 <!--This section lets you put in your initials-->
-<div class="container">
-    <div id="insert-initials" class="hide">
+<div class="container hide" id="insert-initials">
+    <div>
         <h1>Completed!</h1>
         <h2>Your final score is</h2>
         <label for="typedInitials">Type your initials:</label>
         <input type="text" id="typedInitials" name="typedInitials">   
+        <button onclick="showLeaderboard()" id="submit-button" class="submit-button button">Submit</button>
     </div>
 </div>
 
 <!--This section will be the leaderboard-->
-<div class = "container">
-    <div id="leaderboard" class = "hide">
+<div class = "container hide" id="leaderboard">
+    <div>
         <h1> High scores leaderboard</h1>
             <div id="highscores"></div>
             <div id="final-buttons" class="last-page-buttons">

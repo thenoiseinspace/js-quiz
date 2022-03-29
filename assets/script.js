@@ -6,7 +6,6 @@ var answerButtonsElement = document.getElementById("answer-buttons")
 
 //start the game
 function showPage2(){
-    //advance to question page
     var firstPageOfQuestions = document.getElementById("question-container");
     var displaySetting1 = firstPageOfQuestions.style.display; 
     firstPageOfQuestions.style.display="block"; 
@@ -59,6 +58,16 @@ function showQuestion(question){
     })
 }
 
+function showLeaderboard() {
+    //has to log submission
+    var lastPageScores = document.getElementById("leaderboard");
+    var displaySetting1 = lastPageScores.style.display; 
+    lastPageScores.style.display="block"; 
+    
+    var thirdPageSubmission = document.getElementById ("insert-initials"); 
+    var displaySetting2 = thirdPageSubmission.style.display;
+    thirdPageSubmission.style.display="none"
+}
 
 
 function resetState(){
@@ -81,6 +90,15 @@ function selectAnswer(e){
     } else {
        // startButton.innerText = "Restart"
         //startButton.classList.remove("hide")
+
+
+        var thirdPageScore = document.getElementById("insert-initials");
+        var displaySetting1 = thirdPageScore.style.display; 
+        thirdPageScore.style.display="block"; 
+        
+        var firstPageOfQuestions = document.getElementById ("question-container"); 
+        var displaySetting2 = firstPageOfQuestions.style.display;
+        firstPageOfQuestions.style.display="none"
    }
 }
 
