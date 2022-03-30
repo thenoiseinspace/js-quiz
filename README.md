@@ -10,7 +10,13 @@ GitHub repo link: <a href="https://github.com/thenoiseinspace/js-quiz">https://g
 Live deployment link: <a href="https://thenoiseinspace.github.io/js-quiz">https://thenoiseinspace.github.io/js-quiz</a>
 
 Screenshots (also included in assets folder):
-<img src="./assets">
+<img src="https://github.com/thenoiseinspace/js-quiz/blob/main/assets/screenshot1.png">
+
+<img src="https://github.com/thenoiseinspace/js-quiz/blob/main/assets/screenshot2.png">
+
+<img src="https://github.com/thenoiseinspace/js-quiz/blob/main/assets/screenshot3.png">
+
+<img src="https://github.com/thenoiseinspace/js-quiz/blob/main/assets/screenshot4.png">
 
 
 Bibliography of sources referenced:
