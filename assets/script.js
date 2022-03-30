@@ -4,6 +4,15 @@ var questionContainerElement = document.getElementById("question-container")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
 
+//document.querySelector('#submit-button').addEventListener('click', function())
+
+//these variables link to the user initials submission
+var btn = document.getElementById('submit-button');
+var inputBox = document.getElementById('typedInitials');
+
+var outputbox=document.getElementById("highscores");
+console.log()
+
 //start the game
 function showPage2(){
     var firstPageOfQuestions = document.getElementById("question-container");
@@ -36,7 +45,7 @@ function startGame(){
     advanceToNextQ()
 }
 
-//select an answer - ALSO NEEDS TO ADVANCE TO NEXT Q!
+//select an answer
 
 function advanceToNextQ(){
     resetState()
@@ -56,6 +65,13 @@ function showQuestion(question){
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
     })
+}
+
+//Setting up scores
+function scoringQuestions(){
+    var correct1= document.getElementById("questions")
+    if (correct1.checked===correct)
+        {score ++;}
 }
 
 function showLeaderboard() {
@@ -86,7 +102,7 @@ function selectAnswer(e){
     } )
     if(shuffledQuestions.length > currentQuestionIndex + 1){
         //change this
-        nextButton.classList.remove("hide")
+        //nextButton.classList.remove("hide")
     } else {
        // startButton.innerText = "Restart"
         //startButton.classList.remove("hide")
@@ -118,7 +134,7 @@ function clearStatusClass(element){
 
 var questions = [
     {
-      question1: "Arrays in JS can be used to store:", 
+      question: "Arrays in JS can be used to store:", 
       answers:  [
           {text: "All of these", correct: true},
           {text: "Numbers and strings", correct: false},
@@ -127,7 +143,7 @@ var questions = [
       ]
     },
     {
-        question2: "Commonly used data types DO NOT include:", 
+        question: "Commonly used data types DO NOT include:", 
         answers:  [
             {text: "Alerts", correct: true},
             {text: "Strings", correct: false},
@@ -136,7 +152,7 @@ var questions = [
         ]
       },
       {
-        question3: "The condition of an 'if/then' statement is enclosed within: ", 
+        question: "The condition of an 'if/then' statement is enclosed within: ", 
         answers:  [
             {text: "parentheses", correct: true},
             {text: "quotes", correct: false},
@@ -146,3 +162,56 @@ var questions = [
       }
 ]
 
+//getting user info to display on page
+function getInfoFromUser(e){
+    e.preventDefault();
+   // var inputBox2 = document.getElementById('typedInitials');
+    inputBox = document.getElementById('typedInitials');
+    console.log(inputBox.value);
+    //taking elements from the html form submission to store in variables
+    var inputBoxValue = inputBox.value; 
+    //create the div to display it all
+    var firstElement=document.createElement('div');
+    firstElement.textContent=inputBoxValue; 
+    console.log(firstElement);
+    console.log(inputBoxValue);
+
+    outputbox.appendChild(firstElement);
+
+}
+
+btn.addEventListener("click", getInfoFromUser)
+
+//adding timer
+var count = 60;
+var timer = setInterval(function() {
+  console.log(count);
+  count--;
+  if(count === 0) {
+    stopInterval()
+  }
+}, 1000);
+
+var stopInterval = function() {
+  console.log('time is up!');
+  clearInterval(timer);
+}
+
+//btn.addEventListener('click', getInfoFromUser){
+  //  e.preventDefault();
+    //console.log("after click test");
+//}
+
+
+//restart quiz
+/*function restart() {
+    currentQuestion = 0;
+    prevBtn.classList.remove("hide");
+    nextBtn.classList.remove("hide");
+    submitBtn.classList.remove("hide");
+    trueBtn.classList.remove("hide");
+    falseBtn.classList.remove("hide");
+    score = 0;
+    userScore.innerHTML = score;
+    beginQuiz();
+ } */

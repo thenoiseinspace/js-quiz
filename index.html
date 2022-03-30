@@ -13,6 +13,7 @@
     <div >
         <h1>This is a Javascript quiz</h1>
         <p>It hurts me more than it hurts you because it was very difficult to build. Will it work properly? Who knows! Shall we find out together? </p>
+        <p>Open the console to see the countdown timer--your time starts now!</p>
         <div class="controls">
             <button onclick="showPage2()" id="start-button" class="start button button">Start</button>
         </div>
@@ -40,9 +41,11 @@
     <div>
         <h1>Completed!</h1>
         <h2>Your final score is</h2>
-        <label for="typedInitials">Type your initials:</label>
-        <input type="text" id="typedInitials" name="typedInitials">   
-        <button onclick="showLeaderboard()" id="submit-button" class="submit-button button">Submit</button>
+        <form>
+            <label for="typedInitials">Type your initials:</label>
+            <input type="text" id="typedInitials" id="username" name="typedInitials">  
+            <button onclick="showLeaderboard()" id="submit-button" type="submit" class="submit-button button">Submit</button>
+        </form>
     </div>
 </div>
 
@@ -51,6 +54,7 @@
     <div>
         <h1> High scores leaderboard</h1>
             <div id="highscores"></div>
+            <p id="highscores-display"></p>
             <div id="final-buttons" class="last-page-buttons">
                 <button class="button">Restart</button>
                 <button class="button">Clear scores</button>
