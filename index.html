@@ -28,10 +28,10 @@
         <div >
             <div id="question">Question</div>
             <div id="answer-buttons" class="button-grid">
-                <button class="button">Answer 1</button>
-                <button class="button">Answer 2</button>
-                <button class="button">Answer 3</button>
-                <button class="button">Answer 4</button>
+                <button class="button" id="answerButton1">Answer 1</button>
+                <button class="button" id="answerButton2">Answer 2</button>
+                <button class="button" id="answerButton3">Answer 3</button>
+                <button class="button" id="answerButton4">Answer 4</button>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
         <h2>Your final score is</h2>
         <form>
             <label for="typedInitials">Type your initials:</label>
-            <input type="text" id="typedInitials" id="username" name="typedInitials">  
+            <input type="text" id="typedInitials" iname="typedInitials">  
             <button onclick="showLeaderboard()" id="submit-button" type="submit" class="submit-button button">Submit</button>
         </form>
     </div>
@@ -55,10 +55,10 @@
         <h1> High scores leaderboard</h1>
             <div id="highscores"></div>
             <p id="highscores-display"></p>
-            <div id="final-buttons" class="last-page-buttons">
+            <!--<div id="final-buttons" class="last-page-buttons">
                 <button class="button">Restart</button>
                 <button class="button">Clear scores</button>
-            </div>
+            </div>-->
 
     </div>
 </div>    

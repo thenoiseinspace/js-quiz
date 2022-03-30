@@ -1,17 +1,23 @@
 //setting up global variables
-var startButton = document.getElementById("start-button")
-var questionContainerElement = document.getElementById("question-container")
-var questionElement = document.getElementById("question")
-var answerButtonsElement = document.getElementById("answer-buttons")
+var startButton = document.getElementById("start-button");
+var questionContainerElement = document.getElementById("question-container");
+var questionElement = document.getElementById("question");
+var answerButtonsElement = document.getElementById("answer-buttons");
+var firstAnswerButtonElement = document.getElementById("answerButton1")
+var secondAnswerButtonElement = document.getElementById("answerButton2")
+var thirdAnswerButtonElement = document.getElementById("answerButton3")
+var fourthAnswerButtonElement = document.getElementById("answerButton4")
+//setting the starting score at zero
+var score = 0;
 
-//document.querySelector('#submit-button').addEventListener('click', function())
+//document.querySelector('#answerButton1').addEventListener('click', function(increasingScore));
 
 //these variables link to the user initials submission
 var btn = document.getElementById('submit-button');
 var inputBox = document.getElementById('typedInitials');
 
 var outputbox=document.getElementById("highscores");
-console.log()
+//console.log()
 
 //start the game
 function showPage2(){
@@ -30,7 +36,7 @@ var shuffledQuestions, currentQuestionIndex
 
 //make this thing work with the answer buttons
 answerButtonsElement.addEventListener("click", () => {
-    currentQuestionIndex++
+   currentQuestionIndex++
     advanceToNextQ()
 })
 
@@ -67,7 +73,7 @@ function showQuestion(question){
     })
 }
 
-//Setting up scores
+//Setting up scores and increasing with correct answers
 function scoringQuestions(){
     var correct1= document.getElementById("questions")
     if (correct1.checked===correct)
@@ -118,6 +124,7 @@ function selectAnswer(e){
    }
 }
 
+
 function setStatusClass(element, correct){
     clearStatusClass(element)
     if(correct) {
@@ -162,6 +169,21 @@ var questions = [
       }
 ]
 
+
+
+
+function increasingScore(){
+    score++; 
+    console.log(score);
+    console.log("I love cheese");
+   // currentQuestionIndex++
+    //advanceToNextQ()
+}
+
+document.querySelector('#answerButton1').addEventListener('click', increasingScore);
+
+firstAnswerButtonElement.addEventListener("click", increasingScore)
+
 //getting user info to display on page
 function getInfoFromUser(e){
     e.preventDefault();
@@ -192,6 +214,17 @@ var timer = setInterval(function() {
   }
 }, 1000);
 
+//decreasing time for every wrong answer
+//scoring and timing
+function scoreAndTimeUpdate(){
+    if(userAnswer !== questions[counter].answer) {
+        timeLeft -= 5;
+        if(timeLeft === 0){
+            endQuiz();
+        }
+    }
+}
+
 var stopInterval = function() {
   console.log('time is up!');
   clearInterval(timer);
@@ -206,8 +239,6 @@ var stopInterval = function() {
 //restart quiz
 /*function restart() {
     currentQuestion = 0;
-    prevBtn.classList.remove("hide");
-    nextBtn.classList.remove("hide");
     submitBtn.classList.remove("hide");
     trueBtn.classList.remove("hide");
     falseBtn.classList.remove("hide");
